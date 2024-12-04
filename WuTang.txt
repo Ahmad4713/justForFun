@@ -1,0 +1,57 @@
+factory function example:
+const dogFactory = (name, breed, weight) => {
+  return {
+    _name: name,
+    _breed: breed,
+    _weight: weight,
+    
+    // Getter for name
+    get name() {
+      return this._name;
+    },
+    
+    // Setter for name
+    set name(newName) {
+      if (typeof newName === "string") {
+        this._name = newName;
+      } else {
+        console.log("Name must be a string.");
+      }
+    },
+
+    // Getter for breed
+    get breed() {
+      return this._breed;
+    },
+    
+    // Setter for breed
+    set breed(newBreed) {
+      if (typeof newBreed === "string") {
+        this._breed = newBreed;
+      } else {
+        console.log("Breed must be a string.");
+      }
+    },
+
+    // Getter for weight
+    get weight() {
+      return this._weight;
+    },
+    
+    // Setter for weight
+    set weight(newWeight) {
+      if (typeof newWeight === "number" && newWeight > 0) {
+        this._weight = newWeight;
+      } else {
+        console.log("Weight must be a positive number.");
+      }
+    },
+    bark (){
+      return 'ruff! ruff!'
+    },
+    eatTooManyTreats(){
+      this._weight +=1
+      return this._weight
+    }
+  };
+};
